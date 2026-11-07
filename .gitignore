@@ -1,0 +1,11 @@
+# Build outputs (rebuild with build.bat; binaries are distributed via releases)
+ddraw.dll
+test_shim.exe
+*.o
+*.obj
+
+# Runtime log written next to the game executable
+ddraw_shim.log
+
+# Local toolchain (must live at a path without spaces — see README)
+toolchain/

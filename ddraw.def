@@ -1,0 +1,20 @@
+; Export set mirrors Wine's builtin ddraw.dll (ddraw.spec).
+; The "Name = Internal@N" form exports the stdcall-decorated symbol under the
+; plain undecorated name that GetProcAddress/LoadLibrary callers resolve.
+LIBRARY ddraw.dll
+EXPORTS
+    DirectDrawCreate        = XDirectDrawCreate@12
+    DirectDrawCreateClipper = XDirectDrawCreateClipper@12
+    DirectDrawCreateEx      = XDirectDrawCreateEx@16
+    DirectDrawEnumerateA    = XDirectDrawEnumerateA@8
+    DirectDrawEnumerateW    = XDirectDrawEnumerateW@8
+    DirectDrawEnumerateExA  = XDirectDrawEnumerateExA@12
+    DirectDrawEnumerateExW  = XDirectDrawEnumerateExW@12
+    DllCanUnloadNow         = XDllCanUnloadNow@0
+    DllGetClassObject       = XDllGetClassObject@12
+    DllRegisterServer       = XDllRegisterServer@0
+    DllUnregisterServer     = XDllUnregisterServer@0
+    GetDDSurfaceLocal       = XGetDDSurfaceLocal@12
+    GetSurfaceFromDC        = XGetSurfaceFromDC@12
+    RegisterSpecialCase     = XRegisterSpecialCase@0
+    ReleaseDDThreadLock     = XReleaseDDThreadLock@0
