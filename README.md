@@ -62,15 +62,27 @@ DirectDraw, so the blast radius is one folder), the shim:
 1. Build `ddraw.dll` (see below) or take it from a release.
 2. Copy `ddraw.dll` into the game's **`Enhanced/`** folder, next to
    `prophecy.exe`. Do **not** put it anywhere else.
-3. **Mandatory:** tell Wine to prefer the native DLL. In Steam:
-   *Properties → Launch Options*:
+3. **Mandatory:** tell Wine to prefer the native DLL. How depends on your
+   launcher:
+
+   **Steam:** *Properties → Launch Options*:
 
    ```
    WINEDLLOVERRIDES="ddraw=n" %command%
    ```
 
-   For GOG/Lutris/Heroic set the environment variable
-   `WINEDLLOVERRIDES=ddraw=n` in the runner instead.
+   **Heroic Games Launcher (GOG):** select the game → *Settings* (gear icon)
+   → *Advanced* → **Environment Variables** → *Add* and enter:
+
+   | Name               | Value     |
+   | ------------------ | --------- |
+   | `WINEDLLOVERRIDES` | `ddraw=n` |
+
+   (No `%command%` suffix — that is Steam-only syntax. In Heroic,
+   `WINEDLLOVERRIDES` goes into the environment variables table.)
+
+   **Lutris:** game → *Configure* → *System options* → *Environment variables*
+   → add `WINEDLLOVERRIDES` = `ddraw=n`.
 
    Without this override Wine loads its **builtin** ddraw and silently ignores
    the native DLL sitting next to the executable — no error, no log, and it
