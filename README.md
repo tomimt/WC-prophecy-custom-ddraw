@@ -59,7 +59,8 @@ DirectDraw, so the blast radius is one folder), the shim:
 
 ## Installation
 
-1. Build `ddraw.dll` (see below) or take it from a release.
+1. Build `ddraw.dll` (see below) or download it from
+   [Releases](https://github.com/tomimt/WC-prophecy-custom-ddraw/releases).
 2. Copy `ddraw.dll` into the game's **`Enhanced/`** folder, next to
    `prophecy.exe`. Do **not** put it anywhere else.
 3. **Mandatory:** tell Wine to prefer the native DLL. How depends on your
